@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Parking 3D</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: #1a1a2e;
+        }
+
+        #gameCanvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #ui {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 18px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 100;
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        #winMessage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 100, 255, 0.95);
+            color: white;
+            padding: 40px 60px;
+            border-radius: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            display: none;
+            z-index: 200;
+            text-align: center;
+        }
+
+        #restartBtn {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 20px;
+            background: white;
+            color: #0064ff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #restartBtn:hover {
+            background: #f0f0f0;
+        }
+
+        .stat {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <div class="stat">🚓 <strong>Police Parking 3D</strong></div>
+        <div class="stat">Level: <span id="level">1</span></div>
+        <div class="stat">Time: <span id="timer">0</span>s</div>
+        <div class="stat">Distance: <span id="distance">0</span>m</div>
+    </div>
+
+    <div id="controls">
+        ⬆️ W/↑ Accelerate | ⬇️ S/↓ Brake/Reverse | ⬅️ A/← Turn Left | ➡️ D/→ Turn Right
+    </div>
+
+    <div id="winMessage">
+        <div id="messageText">🎉 Level Complete!</div>
+        <button id="restartBtn">Next Level</button>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
